@@ -995,7 +995,7 @@ class NodeManager(object):
             #     msg_bytes = pickle.dumps(msg_obj)
             #     self.client.sendrequest(self.server.socket, (node.ip, node.port), msg_bytes)
             ##############################
-            msg_obj = packet.Message("sendrequest", {"hash":payload, "address": (self.client.ip,self.client.port), "GST":self.GST} )
+            msg_obj = packet.Message("sendrequest", {"hash":payload, "address": (self.client.ip,self.client.port), "GST":self.GST,'id':self.node_id} )
             msg_bytes = pickle.dumps(msg_obj)
 	        #self.tablsp.message=[msg_bytes,"sendrequest"]
             message=[msg_bytes,"sendrequest"]
@@ -1014,7 +1014,7 @@ class NodeManager(object):
             #     msg_bytes = pickle.dumps(msg_obj)
             #     self.client.sendrequest(self.server.socket, (node.ip, node.port), msg_bytes)
             ###############
-            msg_obj = packet.Message("sendrequest", {"hash":payload, "address": (self.client.ip,self.client.port), "GST":self.GST} )
+            msg_obj = packet.Message("sendrequest", {"hash":payload, "address": (self.client.ip,self.client.port), "GST":self.GST,'id':self.node_id} )
             msg_bytes = pickle.dumps(msg_obj)
 	   
             message=[msg_bytes,"sendrequest"]
